@@ -2,7 +2,7 @@
 #'
 #' @export
 
-buildMoonSimJobsList <- function() {
+buildMoonSimJobsList <- function(func, ..., resultsQueue, errorQueue) {
     fuelParams <- list(
         # Assume base fuel required (in millions of pounds) is lognormally distributed with meanlog and sdlog
         # coming from a normal distribution with mean 0.25 and sd 0.025.
@@ -53,8 +53,11 @@ buildMoonSimJobsList <- function() {
         sd = rnorm(1, mean = 0.25, sd = 0.025)
     )
 
-    return(
-        list(
+    return(list(
+        func = func,
+        resultsQueue = resultsQueue,
+        errorQueue = errorQueue,
+        parameters = list(
             fuelParams = fuelParams,
             solarFlareParams = solarFlareParams,
             flareSurfaceParams = flareSurfaceParams,
@@ -62,6 +65,7 @@ buildMoonSimJobsList <- function() {
             surfaceFuelDependenceCopParams = surfaceFuelDependenceCopParams,
             asteroidParams = asteroidParams,
             asteroidAdditionalFuelParams = asteroidAdditionalFuelParams
-        )
-    )
+        ),
+        ...
+    ))
 }

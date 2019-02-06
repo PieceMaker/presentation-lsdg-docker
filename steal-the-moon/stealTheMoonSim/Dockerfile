@@ -1,8 +1,6 @@
 FROM rminion:latest
 MAINTAINER Jonathan Adams <jd.adams16@gmail.com>
 
-ENV REDIS "127.0.0.1"
-
 RUN apt-get update \
     && apt-get install -y \
         libgsl-dev
@@ -13,5 +11,7 @@ COPY . /R
 
 RUN r -e 'devtools::install()' \
     && chmod +x /R/runMinion.sh
+
+ENV REDIS "redis"
 
 CMD [ "./runMinion.sh" ]
