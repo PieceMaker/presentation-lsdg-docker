@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Create loopback device
 mkdir loopback
 truncate -s 20G ./loopback/mssql_data.vol
