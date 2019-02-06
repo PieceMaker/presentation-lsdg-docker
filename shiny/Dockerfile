@@ -15,6 +15,3 @@ RUN chmod +x /shiny/runServer.sh
 EXPOSE 3838
 
 CMD [ "./runServer.sh" ]
-
-# docker build -t credit-risk .
-# docker run -p 80:3838 --name credit-risk credit-risk
