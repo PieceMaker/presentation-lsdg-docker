@@ -1,0 +1,4 @@
+# Only if there is time
+1. Recreate minion from last presentation
+2. Setup redis docker
+3. Show launching multiple minion workers via docker-compose (Try pulling steal-the-moon simulation package from old laptop)

@@ -1,0 +1,7 @@
+# AdventureWorks backup can be downloaded at https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2017.bak
+mssql/backup
+
+node_modules/
+
+# JetBrains IDE files
+.idea/

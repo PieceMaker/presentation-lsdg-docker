@@ -1,0 +1,13 @@
+Package: stealTheMoonSim
+Title: A Package for Demonstrating the rminions Package
+Version: 1.0.0
+Authors@R: person("Jonathan", "Adams", email = "jd.adams16@gmail.com", role = c("aut", "cre"))
+Description: This package contains a super simple space simulation for demonstrating the
+    spreading of work amongst multiple minion workers.
+Depends:
+    R (>= 3.4.4)
+Imports:
+    copula (>= 0.999-18)
+License: GPL-2
+LazyData: true
+RoxygenNote: 6.0.1
