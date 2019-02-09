@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 docker volume create mssql_data
 
 # Run MSSQL 2017 CU 10
@@ -31,6 +32,9 @@ docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=MyAwS0M3P4SsW0Rd!' -p 1433:1433 -v
 
 # After restoring, turn off and create snapshot
 sudo lvcreate -s --name thin_volume_1_snapshot docker/thin_volume_1
+
+# Upgrade to 2019
+docker run -p 1433:1433 -v /mnt/mssql_data:/var/opt/mssql -v /home/ubuntu/backup:/var/opt/backup --name mssql --rm mcr.microsoft.com/mssql/server:2019-CTP2.2-ubuntu
 
 # And when ready to revert
 sudo umount /mnt/mssql_data

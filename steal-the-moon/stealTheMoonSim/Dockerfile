@@ -1,5 +1,5 @@
 FROM rminion:latest
-MAINTAINER Jonathan Adams <jd.adams16@gmail.com>
+MAINTAINER Jonathan Adams <myemail@gmail.com>
 
 RUN apt-get update \
     && apt-get install -y \
